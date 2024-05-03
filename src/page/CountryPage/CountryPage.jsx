@@ -9,9 +9,13 @@ function CountryPage() {
 	const [data, setData] = useState([])
 
 	async function send() {
-		const res = await axios.get(`https://restcountries.com/v3.1/name/${id}`)
-		console.log(res.data)
-		setData(res.data)
+		try {
+			const res = await axios.get(`https://restcountries.com/v3.1/name/${id}`)
+			if (res.length === 0) throw new Error('data missing')
+			setData(res.data)
+		} catch (error) {
+			console.log(error.message)
+		}
 	}
 
 	useEffect(() => {

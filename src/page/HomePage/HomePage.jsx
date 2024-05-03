@@ -7,9 +7,13 @@ function HomePage() {
 	const [obj, setObj] = useState([])
 
 	async function send() {
-		const res = await axios.get('https://restcountries.com/v3.1/all')
-		console.log(res.data)
-		setObj(res.data)
+		try {
+			const res = await axios.get('https://restcountries.com/v3.1/all')
+			if (res.length === 0) throw new Error('data missing')
+			setObj(res.data)
+		} catch (error) {
+			console.log(error.message)
+		}
 	}
 
 	useEffect(() => {
