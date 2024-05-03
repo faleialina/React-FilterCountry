@@ -1,0 +1,43 @@
+.item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 600px;
+	margin: auto;
+	border-radius: 12px;
+	border: 1px solid var(--Grey-200, #eaebed);
+	background: #fff;
+	padding: 24px;
+	margin-bottom: 16px;
+	.title {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		h2 {
+			color: var(--Blue-Main-500, #5e96fc);
+			font: 600 20px Inter;
+		}
+		.flex {
+			display: flex;
+			gap: 10px;
+
+			p {
+				color: var(--Black, #232134);
+				font: 600 16px Inter;
+			}
+
+			.img {
+				background-image: url(../../../public/assets/M.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+	.flexFlafs {
+		display: flex;
+
+		gap: 10px;
+	}
+}
